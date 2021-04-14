@@ -1,0 +1,8 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -q batch
+#PBS -V 
+cd $PBS_O_WORKDIR
+
+hicHyperoptDetectLoops -m ${inm} -p ${inp} -ml 200000 -o ${out}
+
