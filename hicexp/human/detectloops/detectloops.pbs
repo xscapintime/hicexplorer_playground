@@ -1,0 +1,9 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${output}.results.txt
+#PBS -q batch
+#PBS -V 
+cd $PBS_O_WORKDIR
+
+hicDetectLoops -m ${input} -o ${output} --maxLoopDistance 2000000 \
+--windowSize 10 --peakWidth 6 --pValuePreselection 0.05 --pValue 0.01
