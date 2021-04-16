@@ -1,0 +1,14 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${out}.results.txt
+#PBS -q batch
+#PBS -V 
+cd $PBS_O_WORKDIR
+
+zcat ${inp} | cooler cload pairs -c1 1 -p1 2 -c2 4 -p2 5 mm10.chrom.sizes:${res} - ${out} # Bug in cooler's dealing with gzip files
+
+#cooler balance -p 28 ${out}.cooler
+
+#cooler dump --header --join --balanced ${out}.cooler | gzip > ${out}
+
+#rm ${out}.cooler
