@@ -1,4 +1,4 @@
-for f in ../cool/*.cooler
+for f in ../cool/*.cool
 do
 	bn=`basename $f`
 	rn=`echo ${bn} | sed "s/.iced.matrix.gz//g"`
