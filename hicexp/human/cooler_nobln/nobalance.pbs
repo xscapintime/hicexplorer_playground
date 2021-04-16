@@ -5,7 +5,7 @@
 #PBS -V 
 cd $PBS_O_WORKDIR
 
-zcat ${inp} | cooler cload pairs -c1 1 -p1 2 -c2 4 -p2 5 hg38.chrom.sizes:${res} - ${out}_cload.cool # Bug in cooler's dealing with gzip files
+zcat ${inp} | cooler cload pairs -c1 1 -p1 2 -c2 4 -p2 5 hg38.chrom.sizes:${res} - ${out} # Bug in cooler's dealing with gzip files
 
 #cooler balance -p 28 ${out}.cooler
 
