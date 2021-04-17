@@ -5,5 +5,5 @@
 #PBS -V 
 cd $PBS_O_WORKDIR
 
-hicDetectLoops -m ${input} -o ${output} --maxLoopDistance 2000000 \
---windowSize 10 --peakWidth 6 --pValuePreselection 0.5 --pValue 0.1
+hicDetectLoops -m ${input} -o ${output} --maxLoopDistance 6000000 \
+--windowSize 10 --peakWidth 6 --pValuePreselection 1 --pValue 1
