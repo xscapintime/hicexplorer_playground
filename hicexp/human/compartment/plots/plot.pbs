@@ -1,0 +1,8 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${out}_res.txt
+#PBS -q batch
+#PBS -V
+cd $PBS_O_WORKDIR
+
+hicPlotMatrix -m ${inp_h5} --outFileName ${out}.pdf --perChr # --bigwig ${inp_pc1}
