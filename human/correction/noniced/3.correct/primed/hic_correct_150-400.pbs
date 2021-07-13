@@ -1,0 +1,9 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${out}_correction.res.txt
+#PBS -q batch
+#PBS -V
+cd $PBS_O_WORKDIR
+
+hicCorrectMatrix correct -m ${inp} --correctionMethod ICE --iterNum 500 \
+--filterThreshold -3.5 5 -o ${out}_corrected.h5

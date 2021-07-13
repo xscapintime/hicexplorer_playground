@@ -1,0 +1,9 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${out}_res.txt
+#PBS -q batch
+#PBS -V
+cd $PBS_O_WORKDIR
+
+bamCoverage -b ${inp} -o ${out}.bw -of bigwig -bs 1
+

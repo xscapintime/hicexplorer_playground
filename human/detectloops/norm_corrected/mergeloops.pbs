@@ -1,0 +1,13 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${sp}.loopmerge.results.txt
+#PBS -q batch
+#PBS -V
+cd $PBS_O_WORKDIR
+
+hicMergeLoops -i $inp \
+${sp}_40000_normed_corrected.loops.bedgraph \
+${sp}_150000_normed_corrected.loops.bedgraph \
+${sp}_400000_normed_corrected.loops.bedgraph \
+-o ${sp}_merge.loops.bedgraph \
+-r 20000

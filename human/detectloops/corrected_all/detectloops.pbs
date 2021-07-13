@@ -1,0 +1,9 @@
+#PBS -l nodes=2:ppn=32
+#PBS -j oe
+#PBS -o ${out}.results.txt
+#PBS -q batch
+#PBS -V 
+cd $PBS_O_WORKDIR
+
+hicDetectLoops -m ${inp} -o ${out}.loops.bedgraph --maxLoopDistance 6000000 \
+--windowSize 10 --peakWidth 6 --pValuePreselection 1 --pValue 1 #no pval

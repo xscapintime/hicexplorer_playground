@@ -1,0 +1,8 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${out}.for2m.res.txt
+#PBS -q batch
+#PBS -V
+cd $PBS_O_WORKDIR
+
+hicMergeMatrixBins -m ${inp} -o ${sp}_merged_2m.h5 -nb 50

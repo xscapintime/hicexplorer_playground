@@ -1,0 +1,9 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${out}_bdgres.txt
+#PBS -q batch
+#PBS -V 
+cd $PBS_O_WORKDIR
+
+hicPCA -m ${inp} --outputFileName ${out}.pca1.bedgraph ${out}.pca2.bedgraph --format bedgraph \
+--extraTrack ../genedensity/bigwig/Hs_esc_${sp}.merged.bw

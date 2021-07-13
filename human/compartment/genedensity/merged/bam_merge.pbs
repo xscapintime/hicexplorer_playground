@@ -1,0 +1,12 @@
+#PBS -l nodes=1:ppn=32
+#PBS -j oe
+#PBS -o ${out}_res.txt
+#PBS -q batch
+#PBS -V
+cd $PBS_O_WORKDIR
+
+path='../bam'
+
+samtools merge ${out}.merged.bam \
+${inp} \
+${path}/${out}.rp2.*.bam
