@@ -4,7 +4,7 @@ do
     bn=`basename $f`
     rn=`echo $bn | sed 's#.bedpe.gz##g'`   
     
-    for res in 20000 40000 150000 400000
+    for res in 5000 10000 20000 40000 150000 400000
     do 
         full_name=`echo $rn.$res.cloadp.cool`
         if ! [ -f $full_name ]
