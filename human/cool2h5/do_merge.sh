@@ -3,7 +3,7 @@ do
 	bn=`basename $f`
 	#rn=`echo $bn | sed "s/.cool.blc.h5//g"`
 	
-	if [[ ${bn} =~ ".20000." ]] || [[ ${bn} =~ ".40000." ]]
+	if [[ ${bn} =~ ".10000." ]] || [[ ${bn} =~ ".5000." ]]
 	then
 		gene=`echo $bn | cut -d "_" -f 1,2`
 		res=`echo $bn | cut -d "." -f 2`

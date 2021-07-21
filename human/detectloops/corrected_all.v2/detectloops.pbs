@@ -5,5 +5,5 @@
 #PBS -V 
 cd $PBS_O_WORKDIR
 
-hicDetectLoops -m ${inp} -o ${out}.loops.bedgraph --maxLoopDistance 3000000 \
---windowSize 6 --peakWidth 3 --pValuePreselection 1 --pValue 1 #no pval
+hicDetectLoops -m ${inp} -o ${out}.loops.bedgraph --maxLoopDistance 4000000 \
+--windowSize 10 --peakWidth 6 --pValuePreselection 0.05 --pValue 0.05
